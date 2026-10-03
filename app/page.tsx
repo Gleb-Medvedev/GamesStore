@@ -1,11 +1,5 @@
-import { Header } from '@/widgets/Header/ui/Header';
-import { Preheader } from '@/widgets/Preheader/Preheader';
+import { Container } from '@/shared/ui';
 
 export default function Home() {
-  return (
-    <>
-      <Preheader />
-      <Header />
-    </>
-  );
+  return <Container>MAIN</Container>;
 }

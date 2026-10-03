@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { Blinker, Geist } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/shared/lib';
+import { Preheader } from '@/widgets/Preheader/Preheader';
+import { Header } from '@/widgets/Header';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const blinkerSans = Blinker({
   variable: '--font-blinker-sans',
@@ -19,9 +21,19 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="ru"
-      className={cn("h-full", "antialiased", blinkerSans.variable, "font-sans", geist.variable)}
+      className={cn(
+        'h-full',
+        'antialiased',
+        blinkerSans.variable,
+        'font-sans',
+        geist.variable
+      )}
     >
-    <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Preheader />
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
