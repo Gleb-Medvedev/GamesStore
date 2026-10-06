@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Blinker, Geist } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/shared/lib';
-import { Preheader } from '@/widgets/Preheader/Preheader';
-import { Header } from '@/widgets/Header';
+import { Preheader } from '@/widgets/Preheader/ui/Preheader';
+import { Header } from '@/widgets/Header/ui/Header';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
