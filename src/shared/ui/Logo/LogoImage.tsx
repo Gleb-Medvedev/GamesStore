@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import logoPath from './logo.png';
 import { FC } from 'react';

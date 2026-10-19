@@ -1,13 +1,15 @@
-import { Typography } from '@/shared/ui/Typography';
 import { LogoImage } from '@/shared/ui/Logo/LogoImage';
+import { LogoText } from '@/shared/ui/Logo/LogoText';
 
 export const CombinedLogo = () => {
   return (
-    <div className={'combined-logo grid grid-cols-[4rem_auto] gap-4 w-min'}>
+    <div
+      className={
+        'combined-logo grid w-min grid-cols-[4rem_auto] items-center gap-4'
+      }
+    >
       <LogoImage />
-      <Typography tagName={'span'} title={'Логотип'} className={'w-min'}>
-        Магазин
-      </Typography>
+      <LogoText />
     </div>
   );
 };
