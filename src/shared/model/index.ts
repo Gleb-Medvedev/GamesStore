@@ -1,1 +1,1 @@
-export type { ClassNames } from './ClassNames';
+export type { DefaultComponentProps } from './DefaultComponentProps';

@@ -1,10 +1,10 @@
 import { FC, ReactNode } from 'react';
-import { ClassNames } from '@/shared/model';
+import { DefaultComponentProps } from '@/shared/model';
 
-interface ContainerProps extends ClassNames {
+interface ContainerProps extends DefaultComponentProps {
   children: ReactNode;
 }
 
 export const Container: FC<ContainerProps> = ({ className, children }) => (
-  <div className={`mx-auto max-w-7xl ${className}`}>{children}</div>
+  <div className={`container mx-auto max-w-7xl ${className}`}>{children}</div>
 );

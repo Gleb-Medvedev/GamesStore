@@ -1,4 +1,4 @@
-import { Container } from '@/shared/ui';
+import { Container } from '@/shared/ui/Container';
 
 export const Preheader = () => {
   return (
