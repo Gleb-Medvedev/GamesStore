@@ -84,6 +84,18 @@ body {
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    /** brand colors **/
+    --brand-orange: #fb731d;
+    --brand-orange_gradient: linear-gradient(90deg, #fad961 0, #f76b1c 62.24%, #f76b1c 100%);
+
+    /** transitions **/
+    --trs-default: 300ms linear all;
+
+    /** vendor colors **/
+    --nintendo_orangered: #fe0016;
+    --xbox_green: #0e7a0d;
+    --playstation_purple: #665cbe;
+    --vk_blue: #0077FF;
 }
 
 .dark {
@@ -121,13 +133,15 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
-  html {
-    @apply font-sans;
+
+    html {
+        @apply font-sans;
     }
 }

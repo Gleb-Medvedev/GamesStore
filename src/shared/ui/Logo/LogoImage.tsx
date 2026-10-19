@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logoPath from './logo.png';
+import logoPath from './logoImage.png';
 import { FC } from 'react';
 import { DefaultComponentProps } from '@/shared/model';
 import Link from 'next/link';

@@ -1,0 +1,33 @@
+.listItem {
+  position: relative;
+
+  & > a {
+    transition: var(--trs-default);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brand-orange);
+    transform: translateY(100%);
+    transition: var(--trs-default);
+    opacity: 0;
+  }
+
+  &:hover {
+    & > a {
+      color: var(--brand-orange);
+    }
+  }
+}
+
+._activeLink {
+  &::before {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

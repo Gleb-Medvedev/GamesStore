@@ -11,7 +11,7 @@ export const LogoText: FC<DefaultComponentProps> = ({
     <Typography
       tagName={'span'}
       title={title}
-      className={cn(`w-min text-2xl/[2.25rem]`, className)}
+      className={cn(`w-min text-2xl/[1.5rem] font-bold text-[var(--brand-orange)]`, className)}
     >
       Магазин
     </Typography>

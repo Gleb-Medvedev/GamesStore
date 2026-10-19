@@ -1,5 +1,6 @@
 import { Container } from '@/shared/ui/Container';
-import { CombinedLogo } from '@/shared/ui/Logo/CombinedLogo';
+import { LogoText } from '@/shared/ui/Logo';
+import { HeaderNavigation } from './HeaderNavigation/HeaderNavigation';
 // import { db } from '@/shared/database';
 // import { games } from '@/shared/database/schema';
 // import { Suspense } from 'react';
@@ -14,7 +15,12 @@ export const Header = () => {
   return (
     <header>
       <Container className="h-full">
-        <CombinedLogo />
+        <div className={'flex nowrap py-2 overflow-hidden gap-4'}>
+          <LogoText />
+          <HeaderNavigation />
+          <div className={'searchBox'}></div>
+          <div className={'userActions'}></div>
+        </div>
       </Container>
 
       {/*<Suspense fallback={<div>ЗАГРУЗКА</div>}>*/}
