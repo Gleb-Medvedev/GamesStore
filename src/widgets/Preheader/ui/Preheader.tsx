@@ -5,7 +5,7 @@ export const Preheader = () => {
   return (
     <aside className={'py-2 bg-black text-white text-center'}>
       <Container className="text-sm tracking-wider">
-        Распродажа до 50%! Перейти в <Link href={'/'} className={'text-[var(--brand-orange)]'}>каталог</Link>
+        Распродажа до 50%! Перейти в <Link href={'/games'} className={'text-[var(--brand-orange)]'}>каталог</Link>
       </Container>
     </aside>
   );

@@ -1,8 +1,8 @@
 import { createElement, FC, ReactNode } from 'react';
 import { DefaultComponentProps } from '@/shared/model';
 
-export interface TypographyProps extends DefaultComponentProps {
-  tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
+interface TypographyProps extends DefaultComponentProps {
+  tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p' | 'article';
   children: ReactNode;
 }
 

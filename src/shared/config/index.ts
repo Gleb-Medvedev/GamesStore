@@ -1,0 +1,1 @@
+export { gamesFakeTable } from './gamesFakeTable';
