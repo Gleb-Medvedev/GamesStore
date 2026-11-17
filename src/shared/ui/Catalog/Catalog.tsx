@@ -1,11 +1,24 @@
-'use client'
+'use client';
 
-import { Menubar } from '../shadcn/menubar';
-import { catalogConfig } from '../Catalog/catalogConfig';
-import { buildCatalog } from '../Catalog/utils/buildCatalogMenu';
+import { Button } from '@/shared/ui/Button/Button';
+import { UserRound } from 'lucide-react';
 
 export const Catalog = () => {
   return (
-    <Menubar >{catalogConfig.map((item) => buildCatalog(item, true))}</Menubar>
+    <Button
+      text={'Click Me!'}
+      icon={UserRound}
+      disabled={true}
+      slotProps={{
+        text: {
+          className: 'text-lg',
+        },
+        icon: {
+          size: 'lg',
+          iconOrder: 'iconFirst',
+        },
+      }}
+    />
+    // <Menubar >{catalogConfig.map((item) => buildCatalog(item, true))}</Menubar>
   );
 };
