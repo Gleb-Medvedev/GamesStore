@@ -1,23 +1,25 @@
-import { Typography } from '@/shared/ui/Typography';
-import { DefaultComponentProps } from '@/shared/model';
+import { BaseComponentProps } from '@/shared/model';
 import { FC } from 'react';
 import { cn } from '@/shared/lib';
 import Link from 'next/link';
+import { TooltipContainer } from '@/shared/ui/TooltipContainer/TooltipContainer';
 
-export const LogoText: FC<DefaultComponentProps> = ({
-  title = 'Логотип',
-  className,
-}) => {
+export const LogoText: FC<BaseComponentProps> = (props) => {
+  const { tooltip, className, ...rest } = props;
+
   return (
-    <Typography
-      tagName={'span'}
-      title={title}
-      className={cn(
-        `w-min text-2xl/[1.5rem] font-bold text-[var(--brand-orange)]`,
-        className
-      )}
-    >
-      <Link href={'/'}>Магазин</Link>
-    </Typography>
+    <TooltipContainer tooltip={tooltip}>
+      <h2 className={'text-3xl'} {...rest}>
+        <Link
+          href={'/'}
+          className={cn(
+            `inline-block w-min bg-[image:var(--brand-orange_gradient)] bg-clip-text font-bold text-nowrap text-transparent`,
+            className
+          )}
+        >
+          GAMES STORE
+        </Link>
+      </h2>
+    </TooltipContainer>
   );
 };

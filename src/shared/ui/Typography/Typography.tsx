@@ -1,7 +1,7 @@
 import { createElement, FC, ReactNode } from 'react';
-import { DefaultComponentProps } from '@/shared/model';
+import { BaseComponentProps } from '@/shared/model';
 
-interface TypographyProps extends DefaultComponentProps {
+interface TypographyProps extends BaseComponentProps {
   tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p' | 'article';
   children: ReactNode;
 }

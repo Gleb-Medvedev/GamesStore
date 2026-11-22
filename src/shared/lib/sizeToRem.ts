@@ -1,6 +1,6 @@
 import { Size } from '@/shared/model';
 
-export const calculateIconSize = (size: Size | undefined): string => {
+export const sizeToRem = (size: Size | undefined): string => {
   switch (size) {
     case 'sm':
       return '1rem';

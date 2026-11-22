@@ -6,11 +6,15 @@ export const navigationLinks: Readonly<Array<NavigationLinkConfig>> = [
     href: '/about',
   },
   {
-    title: 'Контакты',
-    href: '/contact',
+    title: 'Услуги',
+    href: '/services',
   },
   {
-    title: 'Войти',
-    href: '/login',
+    title: 'Оплата',
+    href: '/payment',
+  },
+  {
+    title: 'Контакты',
+    href: '/contact',
   },
 ];

@@ -10,23 +10,25 @@ export const HeaderNavigation = () => {
   const pathName = usePathname();
 
   return (
-    <ul className={'flex flex-nowrap gap-12'}>
-      {navigationLinks.map(({ href, title }) => (
-        <li
-          key={title}
-          className={cn(styles.listItem, {
-            [styles._activeLink]: pathName?.includes(href),
-          })}
-        >
-          <Link
+    <nav>
+      <ul className={'flex flex-nowrap gap-12'}>
+        {navigationLinks.map(({ href, title }) => (
+          <li
             key={title}
-            href={href}
-            className={'block leading-6 font-semibold'}
+            className={cn(styles.listItem, {
+              [styles._activeLink]: pathName?.includes(href),
+            })}
           >
-            {title}
-          </Link>
-        </li>
-      ))}
-    </ul>
+            <Link
+              key={title}
+              href={href}
+              className={'block leading-6 font-semibold'}
+            >
+              {title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };

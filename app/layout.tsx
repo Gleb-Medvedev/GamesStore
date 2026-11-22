@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Blinker, Geist } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/shared/lib';
-import { Preheader } from '@/widgets/Preheader/ui/Preheader';
 import { Header } from '@/widgets/Header/ui/Header';
+import { TooltipProvider } from '@/shared/ui/shadcn/tooltip';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -30,9 +30,11 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       )}
     >
       <body className="flex min-h-full flex-col">
-        <Preheader />
+        {/*<Preheader />*/}
         <Header />
-        <main>{children}</main>
+        <TooltipProvider>
+          <main>{children}</main>
+        </TooltipProvider>
       </body>
     </html>
   );
