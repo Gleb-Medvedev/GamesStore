@@ -1,4 +1,11 @@
-import { pgTable, varchar, text, date, uuid } from 'drizzle-orm/pg-core';
+import {
+  date,
+  integer,
+  pgTable,
+  text,
+  uuid,
+  varchar,
+} from 'drizzle-orm/pg-core';
 
 export const games = pgTable('games', {
   id: uuid('id').primaryKey().defaultRandom(),
@@ -8,4 +15,6 @@ export const games = pgTable('games', {
   publisher: varchar('publisher', { length: 255 }).notNull(),
   developer: varchar('developer', { length: 255 }).notNull(),
   releaseDate: date('releaseDate', { mode: 'string' }).notNull(),
+  votedQuantity: integer('votedQuantity').notNull(),
+  starRating: integer('starRating').notNull(),
 });

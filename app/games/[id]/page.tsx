@@ -3,6 +3,7 @@ import { db } from '@/shared/database';
 import { games } from '@/shared/database/schema';
 import { eq } from 'drizzle-orm';
 import { notFound } from 'next/navigation';
+import { StarRating } from '@/widgets/StarRating/ui/StarRating';
 
 export default async function GameDetails(props: PageProps<'/games/[id]'>) {
   const { id } = await props.params;
@@ -15,5 +16,14 @@ export default async function GameDetails(props: PageProps<'/games/[id]'>) {
 
   if (!gameToView) return notFound();
 
-  return <Container>{gameToView?.title}</Container>;
+  return (
+    <Container>
+      <div>{gameToView.title}</div>
+      <StarRating
+        starRating={gameToView.starRating}
+        votedQuantity={gameToView.votedQuantity}
+        isInteractive={true}
+      />
+    </Container>
+  );
 }

@@ -1,10 +1,12 @@
-import { BaseComponentProps } from '@/shared/model';
+import { BaseComponentProps, Tooltip } from '@/shared/model';
 import { FC } from 'react';
 import { cn } from '@/shared/lib';
 import Link from 'next/link';
 import { TooltipContainer } from '@/shared/ui/TooltipContainer/TooltipContainer';
 
-export const LogoText: FC<BaseComponentProps> = (props) => {
+type LogoTextProps = BaseComponentProps & Tooltip;
+
+export const LogoText: FC<LogoTextProps> = (props) => {
   const { tooltip, className, ...rest } = props;
 
   return (

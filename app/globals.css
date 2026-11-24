@@ -88,6 +88,7 @@ body {
     /** brand colors **/
     --brand-orange: #fb731d;
     --brand-orange_gradient: linear-gradient(90deg, #fad961 0, #f76b1c 62.24%, #f76b1c 100%);
+    --red-to-green_gradient: linear-gradient(90deg, red 0%, yellow 50%, green 100%);
 
     /** transitions **/
     --trs-default: 300ms linear all;

@@ -31,11 +31,11 @@ export const TooltipContainer: FC<TooltipContainerProps> = ({
   const { className: tooltipClassNameProp, ...positionProps } =
     contentProps ?? {};
 
-  const tooltipContentClassNames = cn(
-    shouldShowDisabledTooltip && 'text-[var(--destructive)]',
-    tooltipClassNameProp,
-    'bg-[var(--background)] text-[var(--foreground)]'
-  );
+  // const tooltipContentClassNames = cn(
+  //   shouldShowDisabledTooltip && 'text-[var(--destructive)]',
+  //   tooltipClassNameProp,
+  //   'bg-[var(--background)] text-[var(--foreground)]'
+  // );
 
   return (
     <Tooltip {...rootProps}>
@@ -47,7 +47,7 @@ export const TooltipContainer: FC<TooltipContainerProps> = ({
           </span>
         }
       />
-      <TooltipContent {...positionProps} className={tooltipContentClassNames}>
+      <TooltipContent {...positionProps}>
         {tooltipContent}
       </TooltipContent>
     </Tooltip>

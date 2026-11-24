@@ -1,4 +1,4 @@
-import { AriaAttributes, AriaRole, ReactNode } from 'react';
+import { AriaAttributes, AriaRole } from 'react';
 
 type InheritedAriaAttributes = Pick<
   AriaAttributes,
@@ -13,5 +13,4 @@ type InheritedAriaAttributes = Pick<
 export type BaseComponentProps = InheritedAriaAttributes & {
   className?: string;
   role?: AriaRole;
-  tooltip?: ReactNode;
 };

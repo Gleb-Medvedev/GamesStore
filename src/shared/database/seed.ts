@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { games } from './schema';
 import { db } from '@/shared/database/db';
+import { Game } from '@/entities/model';
 
 const gamesInitial = [
   {
@@ -1103,26 +1104,36 @@ const gamesInitial = [
   },
 ];
 
-export const actualGames = gamesInitial.map(
-  ({
-    developer,
-    genre,
-    publisher,
-    title,
-    release_date,
-    short_description,
-  }) => ({
-    developer: developer || 'Разработчик не указан',
-    genre: genre || 'Жанр не указан',
-    publisher: publisher || 'Издатель не указан',
-    title: title || 'Название отсутствует',
-    releaseDate: release_date || '01.01.2000',
-    shortDescription: short_description || 'Описание отсутствует',
-  })
-);
-
 async function seed() {
-  await db.insert(games).values(actualGames).then(res => console.log(res));
+  const actualGames: Array<Omit<Game, 'id'>> = gamesInitial.map(
+    ({
+      developer,
+      genre,
+      publisher,
+      title,
+      release_date,
+      short_description,
+    }) => {
+      const ratingValue = Math.floor(Math.random() * 5);
+      const ratingQuantity = Math.ceil(ratingValue);
+
+      return {
+        developer: developer || 'Разработчик не указан',
+        genre: genre || 'Жанр не указан',
+        publisher: publisher || 'Издатель не указан',
+        title: title || 'Название отсутствует',
+        releaseDate: release_date || '01.01.2020',
+        shortDescription: short_description || 'Описание отсутствует',
+        votedQuantity: ratingQuantity,
+        starRating: ratingValue,
+      };
+    }
+  );
+
+  await db
+    .insert(games)
+    .values(actualGames)
+    .then((res) => console.log(res));
 }
 
 seed().catch((err) => {

@@ -1,4 +1,6 @@
-export interface Game {
+import { Rating } from '@/entities/model';
+
+export interface Game extends Rating {
   id: string;
   title: string;
   shortDescription: string;

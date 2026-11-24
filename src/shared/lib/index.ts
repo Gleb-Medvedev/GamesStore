@@ -1,2 +1,2 @@
 export { cn } from './shadcnUtils';
-export { sizeToRem } from './sizeToRem';
+export { sizeToUnits } from './sizeToUnits';

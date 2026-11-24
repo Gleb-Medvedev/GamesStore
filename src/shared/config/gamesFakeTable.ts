@@ -1,6 +1,6 @@
 import { Game } from '@/entities/model';
 
-export const gamesFakeTable: Readonly<Array<Game>> = [
+export const gamesFakeTable: Readonly<Array<Omit<Game, 'rating' | 'starRating' | 'votedQuantity'>>> = [
   {
     id: '540',
     title: 'Overwatch',
